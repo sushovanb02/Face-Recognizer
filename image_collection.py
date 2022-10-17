@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
 
-face_classifier = cv.CascadeClassifier('Face Recognition using Keras\haarcascade_frontalface_default.xml')
+face_classifier = cv.CascadeClassifier('Face-Recognizer-Keras\haarcascade_frontalface_default.xml')
 
 def face_extractor(img):
     faces = face_classifier.detectMultiScale(img,1.3,5)
@@ -28,7 +28,7 @@ while True:
         face = cv.resize(face_extractor(frame),(400,400))
 
         # Saving file in Images directory with a specified name
-        file_name_path = 'Face Recognition using Keras/Datasets/Train/Sushovan' + str(count) + '.jpg'
+        file_name_path = 'Face-Recognizer-Keras/Datasets/Train/Sushovan' + str(count) + '.jpg'
         cv.imwrite(file_name_path,face)
 
         # Put count on images and display live count
