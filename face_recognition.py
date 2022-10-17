@@ -12,8 +12,8 @@ import tensorflow as tf
 
 IMAGE_SIZE = [224,224]
 
-train_path = 'Face Recognition using Keras\Datasets\Train'
-test_path = 'Face Recognition using Keras\Datasets\Test'
+train_path = 'Face-Recognizer-Keras\Datasets\Train'
+test_path = 'Face-Recognizer-Keras\Datasets\Test'
 
 # adding preprocessing layer to the front of VGG
 
@@ -26,7 +26,7 @@ for layer in vgg.layers:
 
 # Useful for getting number of classes
 
-folders = glob('Face Recognition using Keras/Datasets/*')
+folders = glob('Face-Recognizer-Keras/Datasets/*')
 
 x = Flatten()(vgg.output)
 
@@ -48,8 +48,8 @@ shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
-training_set = train_datagen.flow_from_directory('Face Recognition using Keras\Datasets\Train', target_size=(224,224), batch_size=32, class_mode= 'categorical')
-test_set = test_datagen.flow_from_directory('Face Recognition using Keras\Datasets\Test', target_size=(224,224), batch_size=32, class_mode= 'categorical')
+training_set = train_datagen.flow_from_directory('Face-Recognizer-Keras\Datasets\Train', target_size=(224,224), batch_size=32, class_mode= 'categorical')
+test_set = test_datagen.flow_from_directory('Face-Recognizer-Keras\Datasets\Test', target_size=(224,224), batch_size=32, class_mode= 'categorical')
 
 # Fitting the model
 
