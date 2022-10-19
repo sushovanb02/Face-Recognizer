@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run 'Face-Recognizer-Keras\face_frontend.py'
+web: sh setup.sh && streamlit run 'face_frontend.py'
